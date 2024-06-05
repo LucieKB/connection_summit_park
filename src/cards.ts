@@ -105,8 +105,8 @@ export const cards: [
 ];
 
 export const clues: [string, string, string, string] = [
-  "clue1",
-  "clue2",
-  "clue3",
-  "clue4",
+  "1. We are animals.",
+  "2. We are mammals.",
+  "3. We are taller than humans.",
+  "4. We are the only animals in the Olympics.",
 ];
