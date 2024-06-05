@@ -25,82 +25,82 @@ export const cards: [
   {
     id: 1,
     groupId: 1,
-    front: "front1",
+    front: "Riggs",
   },
   {
     id: 2,
     groupId: 1,
-    front: "front2",
+    front: "Roberts",
   },
   {
     id: 3,
     groupId: 1,
-    front: "front3",
+    front: "Riordan",
   },
   {
     id: 4,
     groupId: 1,
-    front: "front4",
+    front: "Rash",
   },
   {
     id: 5,
     groupId: 2,
-    front: "front5",
+    front: "Kuennen",
   },
   {
     id: 6,
     groupId: 2,
-    front: "front6",
+    front: "Gilotti",
   },
   {
     id: 7,
     groupId: 2,
-    front: "front7",
+    front: "Call",
   },
   {
     id: 8,
     groupId: 2,
-    front: "front8",
+    front: "Footer",
   },
   {
     id: 9,
     groupId: 3,
-    front: "front9",
+    front: "Surfing",
   },
   {
     id: 10,
     groupId: 3,
-    front: "front10",
+    front: "Soccer",
   },
   {
     id: 11,
     groupId: 3,
-    front: "front11",
+    front: "Wind Surfing",
   },
   {
     id: 12,
     groupId: 3,
-    front: "front12",
+    front: "Rugby",
   },
   {
     id: 13,
     groupId: 4,
-    front: "front13",
+    front: "Football",
   },
   {
     id: 14,
     groupId: 4,
-    front: "front14",
+    front: "Ultimate Freesbee",
   },
   {
     id: 15,
     groupId: 4,
-    front: "front15",
+    front: "Baseball",
   },
   {
     id: 16,
     groupId: 4,
-    front: "front16",
+    front: "Kite Surfing",
   },
 ];
 
