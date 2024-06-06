@@ -61,6 +61,7 @@ function App() {
             key={card.id}
             style={{
               width: `${CARD_WIDTH}px`,
+              color: "black",
               height: `${CARD_WIDTH}px`,
               border: selectedCards.some((x) => x.id === card.id)
                 ? "4px solid lightblue"
