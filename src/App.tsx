@@ -70,7 +70,7 @@ function App() {
                 : "pointer",
               backgroundColor: completedCards.some((x) => x.id === card.id)
                 ? "black"
-                : "initial",
+                : "white",
             }}
             onClick={() => {
               const cardIsCompleted = completedCards.some(
