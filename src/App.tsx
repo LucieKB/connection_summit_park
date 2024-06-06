@@ -31,7 +31,7 @@ function App() {
       (cardGroup[0] === cardGroup[2] && cardGroup[2] === cardGroup[3]) ||
       (cardGroup[0] === cardGroup[2] && cardGroup[2] === cardGroup[3])
     ) {
-      setMessage(`One away ...  You have ${lives - 1} tries left !`);
+      setMessage(`☝️ One away ...  You have ${lives - 1} tries left !`);
     }
 
     return (
@@ -45,61 +45,59 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1> Connections </h1>
-        {/* <h4>
-          Make 4 groups of 4 words such that the words in each group belong to a
-          specific category. Each time you find a group, you will get a clue to
-          help you open the cipher !
-        </h4> */}
-      </div>
-      <p>{message}</p>
+      <h1> Connections </h1>
 
-      <div className="container">
-        {cardsInRandomOrder.map((card) => (
-          <div
-            key={card.id}
-            style={{
-              width: `${CARD_WIDTH}px`,
-              color: "black",
-              height: `${CARD_WIDTH}px`,
-              border: selectedCards.some((x) => x.id === card.id)
-                ? "4px solid lightblue"
-                : "2px solid black",
-              cursor: completedCards.some((x) => x.id === card.id)
-                ? "not-allowed"
-                : "pointer",
-              backgroundColor: completedCards.some((x) => x.id === card.id)
-                ? "black"
-                : "white",
-            }}
-            onClick={() => {
-              const cardIsCompleted = completedCards.some(
-                (x) => x.id === card.id
-              );
-              if (
-                cardIsCompleted ||
-                (selectedCards.length === 4 &&
-                  !selectedCards.some((x) => x.id === card.id))
-              )
-                return;
+      <p style={{ border: "outset grey 2px", marginBottom: "20px" }}>
+        {message}
+      </p>
+      <div style={{ display: "flex" }}>
+        <div className="container">
+          {cardsInRandomOrder.map((card) => (
+            <div
+              key={card.id}
+              style={{
+                width: `${CARD_WIDTH}px`,
+                alignContent: "center",
+                color: "black",
+                height: `${CARD_WIDTH}px`,
+                border: selectedCards.some((x) => x.id === card.id)
+                  ? "4px solid lightblue"
+                  : "2px solid black",
+                cursor: completedCards.some((x) => x.id === card.id)
+                  ? "not-allowed"
+                  : "pointer",
+                backgroundColor: completedCards.some((x) => x.id === card.id)
+                  ? "black"
+                  : "white",
+              }}
+              onClick={() => {
+                const cardIsCompleted = completedCards.some(
+                  (x) => x.id === card.id
+                );
+                if (
+                  cardIsCompleted ||
+                  (selectedCards.length === 4 &&
+                    !selectedCards.some((x) => x.id === card.id))
+                )
+                  return;
 
-              const cardWasAlreadySelected = selectedCards.some(
-                (x) => x.id === card.id
-              );
-              cardWasAlreadySelected
-                ? setSelectedCards((selectedCards) =>
-                    selectedCards.filter((x) => x.id !== card.id)
-                  )
-                : setSelectedCards((x) => [
-                    ...x,
-                    { ...card, completed: false },
-                  ]);
-            }}
-          >
-            <div>{card.front}</div>
-          </div>
-        ))}
+                const cardWasAlreadySelected = selectedCards.some(
+                  (x) => x.id === card.id
+                );
+                cardWasAlreadySelected
+                  ? setSelectedCards((selectedCards) =>
+                      selectedCards.filter((x) => x.id !== card.id)
+                    )
+                  : setSelectedCards((x) => [
+                      ...x,
+                      { ...card, completed: false },
+                    ]);
+              }}
+            >
+              <div>{card.front}</div>
+            </div>
+          ))}
+        </div>
       </div>
       <button
         style={{ marginTop: "30px" }}
@@ -116,7 +114,7 @@ function App() {
               ...completedCards,
               ...newCompletedCards,
             ]);
-            setMessage(`Great job, you found a group !`);
+            setMessage(`🥳 Great job, you found a group !`);
             setSelectedCards([]);
           } else {
             setLives(lives - 1);
