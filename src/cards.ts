@@ -25,42 +25,42 @@ export const cards: [
   {
     id: 1,
     groupId: 1,
-    front: "Riggs",
+    front: "Mrs. Riggs",
   },
   {
     id: 2,
     groupId: 1,
-    front: "Roberts",
+    front: " Ms. Roberts",
   },
   {
     id: 3,
     groupId: 1,
-    front: "Riordan",
+    front: "Mrs. Riordan",
   },
   {
     id: 4,
     groupId: 1,
-    front: "Rash",
+    front: "Mrs. Rasch",
   },
   {
     id: 5,
     groupId: 2,
-    front: "Kuennen",
+    front: "M. Kuennen",
   },
   {
     id: 6,
     groupId: 2,
-    front: "Gilotti",
+    front: "M. Gilotti",
   },
   {
     id: 7,
     groupId: 2,
-    front: "Call",
+    front: "M. Call",
   },
   {
     id: 8,
     groupId: 2,
-    front: "Footer",
+    front: "M. Footer",
   },
   {
     id: 9,

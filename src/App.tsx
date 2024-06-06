@@ -15,6 +15,7 @@ function App() {
   >([]);
 
   const [lives, setLives] = useState(4);
+  const [message, setMessage] = useState("");
 
   const cardsInRandomOrder = useMemo(
     () => cards.sort(() => Math.random() - 0.5),
@@ -22,7 +23,17 @@ function App() {
   );
 
   const checkIfGroupIsComplete = () => {
+    const cardGroup = selectedCards.map((card) => card.groupId);
     if (selectedCards.length !== 4) return;
+    else if (
+      (cardGroup[0] === cardGroup[1] && cardGroup[1] === cardGroup[2]) ||
+      (cardGroup[0] === cardGroup[1] && cardGroup[1] === cardGroup[3]) ||
+      (cardGroup[0] === cardGroup[2] && cardGroup[2] === cardGroup[3]) ||
+      (cardGroup[0] === cardGroup[2] && cardGroup[2] === cardGroup[3])
+    ) {
+      setMessage(`One away ...  You have ${lives - 1} tries left !`);
+    }
+
     return (
       selectedCards[0].groupId === selectedCards[1].groupId &&
       selectedCards[0].groupId === selectedCards[2].groupId &&
@@ -30,8 +41,20 @@ function App() {
     );
   };
 
+  console.log("lives=", lives);
+
   return (
     <>
+      <div>
+        <h1> Connections </h1>
+        {/* <h4>
+          Make 4 groups of 4 words such that the words in each group belong to a
+          specific category. Each time you find a group, you will get a clue to
+          help you open the cipher !
+        </h4> */}
+      </div>
+      <p>{message}</p>
+
       <div className="container">
         {cardsInRandomOrder.map((card) => (
           <div
@@ -92,6 +115,7 @@ function App() {
               ...completedCards,
               ...newCompletedCards,
             ]);
+            setMessage(`Great job, you found a group !`);
             setSelectedCards([]);
           } else {
             setLives(lives - 1);
